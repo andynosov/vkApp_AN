@@ -10,18 +10,30 @@ import UIKit
 class UserGroupsTableVC: UITableViewController {
     
     
-    @IBOutlet weak var toGlobalGroupsButton: UIBarButtonItem!
-    
+    @IBAction func toGlobalGroupsButton(segue: UIStoryboardSegue){
+        if segue.identifier == "addGroup"{
+            guard let GlobalGroupsVC = segue.source as? GlobalGroupsTableVC else {return}
+            if let indexPath = GlobalGroupsVC.tableView.indexPathForSelectedRow {
+                let selectedGroup = GlobalGroupsVC.globalGroups[indexPath.row]
+                print(selectedGroup)
+                if !groups.contains(selectedGroup) {
+                    groups.append(selectedGroup)
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
     
     
     var groups: [Group] = [
-        Group(name: "John Lennon official", profileImage:"johnlennon"),
-        Group(name: "VAZ lovers", profileImage:  "vaz")
+        Group(name: "John Lennon official",
+              profileImage:"johnlennon"),
+        Group(name: "VAZ lovers",
+              profileImage:  "vaz")
     ]
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return groups.count
     }
     
@@ -36,10 +48,15 @@ class UserGroupsTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    
         
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            groups.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 }
-    
-//
+
+

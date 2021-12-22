@@ -11,7 +11,7 @@ import UIKit
 
 class PhotoCollectionVC: UICollectionViewController {
     
-
+    
     var userPhotoCollection: [UIImage?] = []
     
     
@@ -26,9 +26,4 @@ class PhotoCollectionVC: UICollectionViewController {
         cell.friendLargePhoto.image = userPhotoCollection[indexPath.row]
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//    return CGSize(width: (view.frame.size.width / 2) - 22, height: 150)
-//    }
 }

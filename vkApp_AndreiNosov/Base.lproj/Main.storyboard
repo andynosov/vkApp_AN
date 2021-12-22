@@ -228,7 +228,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" systemColor="systemPinkColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="UserGroupCell" id="wpA-qZ-NfQ" customClass="GroupTableViewCell" customModule="vkApp_AndreiNosov" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="31.666666030883789" width="375" height="100.33333587646484"/>
@@ -270,13 +269,11 @@
                     <navigationItem key="navigationItem" title="My Communities" largeTitleDisplayMode="always" id="E0n-Rn-Z8f">
                         <barButtonItem key="rightBarButtonItem" title="Global Groups" image="plus" catalog="system" style="plain" id="6kB-Sc-4m7">
                             <connections>
-                                <segue destination="wQx-Gs-uho" kind="show" identifier="toGlobalGroups" id="vH6-BA-dI7"/>
+                                <action selector="toGlobalGroupsButtonWithSegue:" destination="48l-VS-2zr" id="0XC-c6-Ska"/>
+                                <segue destination="wQx-Gs-uho" kind="show" id="ZRw-uD-2jN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="toGlobalGroupsButton" destination="6kB-Sc-4m7" id="Clt-2f-vPE"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCJ-LX-5Eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -324,6 +321,7 @@
                                 <connections>
                                     <outlet property="groupImage" destination="rYP-Tf-caD" id="xUX-8H-hC9"/>
                                     <outlet property="groupName" destination="KKc-aH-A9k" id="QcT-ee-wbN"/>
+                                    <segue destination="onH-QE-7wG" kind="unwind" identifier="addGroup" unwindAction="toGlobalGroupsButtonWithSegue:" id="H6q-qY-VGk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -335,6 +333,7 @@
                     <navigationItem key="navigationItem" title="Global Communities" largeTitleDisplayMode="always" id="iph-dX-ro7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="as6-j9-Ugj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="onH-QE-7wG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3399" y="673"/>
         </scene>
@@ -399,9 +398,6 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
