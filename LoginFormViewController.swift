@@ -8,25 +8,27 @@
 
 import UIKit
 
+
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+
     @IBAction func loginButtonAction(_ sender: Any) {
     }
     
-    
+
     
     @IBOutlet weak var ScrollViewLoginPage: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        // клик по любому месту scrollView для скрытия клавиатуры - Жест нажатия
-        let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        // Присваиваем его UIScrollVIew
-        ScrollViewLoginPage?.addGestureRecognizer(hideKeyboard)
         
+        let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+
+        ScrollViewLoginPage?.addGestureRecognizer(hideKeyboard)
+        loginButton.backgroundColor = .systemGray6
+        loginButton.layer.cornerRadius = 5
         // * делегаты для переноса фокуса на следующее поле ввода
         self.emailField.delegate = self
         self.passwordField.delegate = self

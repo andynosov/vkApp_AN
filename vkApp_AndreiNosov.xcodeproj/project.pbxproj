@@ -74,8 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				C1033010276AF82400757585 /* FriendsTableVC.swift */,
-				C1033012276AFE0400757585 /* PhotoCollectionVC.swift */,
 				C17BE2F5276F3B8200DAE1F1 /* FriendTableViewCell.swift */,
+				C1033012276AFE0400757585 /* PhotoCollectionVC.swift */,
 				C11371502770345C003D2800 /* FriendPhotoCollectionViewCell.swift */,
 			);
 			path = "Friends&Photos";

@@ -11,4 +11,5 @@ class FriendPhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var friendLargePhoto: UIImageView!
     
+  
 }
