@@ -9,28 +9,32 @@ import UIKit
 
 class UserGroupsTableVC: UITableViewController {
     
+    var groups: [Group] = []
     
-    @IBAction func toGlobalGroupsButton(segue: UIStoryboardSegue){
-        if segue.identifier == "addGroup"{
-            guard let GlobalGroupsVC = segue.source as? GlobalGroupsTableVC else {return}
-            if let indexPath = GlobalGroupsVC.tableView.indexPathForSelectedRow {
-                let selectedGroup = GlobalGroupsVC.globalGroups[indexPath.row]
-                print(selectedGroup)
-                if !groups.contains(selectedGroup) {
-                    groups.append(selectedGroup)
-                    tableView.reloadData()
-                }
+    @IBAction func toGlobalGroups(segue: UIStoryboardSegue){
+            guard
+                segue.identifier == "addGroup",
+                let globalGroupsVC = segue.source as? GlobalGroupsTableVC,
+                let groupIndexPath = globalGroupsVC.tableView.indexPathForSelectedRow,
+                !self.groups.contains(globalGroupsVC.groups[groupIndexPath.row])
+            else {
+                return
             }
-        }
+            self.groups.append(globalGroupsVC.groups[groupIndexPath.row])
+            tableView.reloadData()
+            print("one")
+    }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UINib(
+            nibName: "GroupCell",
+            bundle: nil),
+                           forCellReuseIdentifier: "groupCell")
     }
     
     
-    var groups: [Group] = [
-        Group(name: "John Lennon official",
-              profileImage:"johnlennon"),
-        Group(name: "VAZ lovers",
-              profileImage:  "vaz")
-    ]
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,24 +43,50 @@ class UserGroupsTableVC: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserGroupCell", for: indexPath) as? GroupTableViewCell else {return UITableViewCell()}
-        cell.groupName.text = groups[indexPath.row].name
-        cell.groupImage.image = UIImage(named: groups[indexPath.row].profileImage)
+        guard
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "groupCell",
+                for: indexPath) as? GroupCell
+        else {
+            return UITableViewCell()
+            
+        }
+        let theGroup = groups[indexPath.row]
+        let avatarOfGroup = theGroup.profileImage
+        let nameOfGroup = theGroup.name
+        
+        cell.configure(
+            image: UIImage(named: avatarOfGroup) ?? UIImage(),
+            name: nameOfGroup)
+        
+//        cell.groupName.text = groups[indexPath.row].name
+//        cell.groupImage.image = UIImage(named: groups[indexPath.row].profileImage)
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
+  override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(
+                at: indexPath,
+                animated: true)
+        }
+
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             groups.remove(at: indexPath.row)
-            tableView.reloadData()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
         }
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+
+    
 }
 
 

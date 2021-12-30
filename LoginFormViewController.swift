@@ -16,16 +16,13 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func loginButtonAction(_ sender: Any) {
     }
-    
-
+        
     
     @IBOutlet weak var ScrollViewLoginPage: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-
         ScrollViewLoginPage?.addGestureRecognizer(hideKeyboard)
         loginButton.backgroundColor = .systemGray6
         loginButton.layer.cornerRadius = 5

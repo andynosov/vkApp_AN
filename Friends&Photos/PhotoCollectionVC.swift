@@ -9,9 +9,16 @@ import UIKit
 
 
 
-class PhotoCollectionVC: UICollectionViewController {
+final class PhotoCollectionVC: UICollectionViewController {
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.register(UINib(
+            nibName: "PhotoCollectionCell",
+            bundle: nil),
+                                forCellWithReuseIdentifier: "photoCollectionCell")
+    }
     var userPhotoCollection: [UIImage?] = []
     
     
@@ -22,8 +29,16 @@ class PhotoCollectionVC: UICollectionViewController {
     
     //конфигурация ячейки
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCollectionCellIdentifier", for: indexPath) as? FriendPhotoCollectionViewCell else { return UICollectionViewCell()}
-        cell.friendLargePhoto.image = userPhotoCollection[indexPath.row]
+        guard
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "photoCollectionCell",
+                for: indexPath) as? PhotoCollectionCell
+        else {
+            return UICollectionViewCell()
+        }
+        cell.configure(image: userPhotoCollection[indexPath.row] ?? UIImage())
+
         return cell
     }
+
 }

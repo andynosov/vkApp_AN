@@ -9,39 +9,65 @@ import UIKit
 
 class GlobalGroupsTableVC: UITableViewController {
 
-    var globalGroups: [Group] = [
-        Group(name: "Make America Great Again", profileImage:"donald"),
-        Group(name: "SwiftUI", profileImage:  "coding")
+    var groups: [Group] = [
+        Group(
+            name: "Make America Great Again",
+            profileImage:"donald"),
+        Group(
+            name: "SwiftUI",
+            profileImage:  "coding"),
+        Group(
+            name: "John Lennon official",
+            profileImage:"johnlennon"),
+        Group(
+            name: "VAZ lovers",
+            profileImage:  "vaz")
     ]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UINib(
+            nibName: "GroupCell",
+            bundle: nil),
+                           forCellReuseIdentifier: "groupCell")
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return globalGroups.count
+        return groups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GlobalGroupsCell", for: indexPath) as? GlobalGroupsCell else {return UITableViewCell()}
-        cell.groupName.text = globalGroups[indexPath.row].name
-        cell.groupImage.image = UIImage(named: globalGroups[indexPath.row].profileImage)
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
+        else {
+            return UITableViewCell()
+        }
+        let theGroup = groups[indexPath.row]
+        let nameOfGroup = theGroup.name
+        let imageOfGroup = theGroup.profileImage
+        
+        cell.configure(
+            image: UIImage(named: imageOfGroup) ?? UIImage(),
+            name: nameOfGroup)
         
         return cell
+    
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        
+        defer { tableView.deselectRow(
+            at: indexPath,
+            animated: true) }
+        performSegue(
+            withIdentifier: "addGroup",
+            sender: nil)
     }
     
     
-    
-    
-    
-    
-    
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
     
 }
 

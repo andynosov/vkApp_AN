@@ -9,9 +9,9 @@ import UIKit
 
 class PhotoCollectionCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var friendLargePhoto: UIImageView!
+    
+    func configure(image: UIImage) {
+        friendLargePhoto.image = image
     }
-
 }
