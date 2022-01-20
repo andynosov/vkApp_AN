@@ -7,7 +7,20 @@
 
 import UIKit
 
-class GlobalGroupsTableVC: UITableViewController {
+class GlobalGroupsTableVC: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBarGlobalGroups: UISearchBar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchBarGlobalGroups.delegate = self
+        makeGroupList()
+        tableView.register(UINib(
+            nibName: "GroupCell",
+            bundle: nil),
+                           forCellReuseIdentifier: "groupCell")
+    }
+    
 
     var groups: [Group] = [
         Group(
@@ -24,13 +37,13 @@ class GlobalGroupsTableVC: UITableViewController {
             profileImage:  "vaz")
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(UINib(
-            nibName: "GroupCell",
-            bundle: nil),
-                           forCellReuseIdentifier: "groupCell")
-    }
+
+    
+    var groupsNameList: [String] = []
+
+    
+    
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
@@ -69,6 +82,18 @@ class GlobalGroupsTableVC: UITableViewController {
         100
     }
     
+    func makeGroupList() {
+        groupsNameList.removeAll()
+        groups.forEach { x in
+            groupsNameList.append(x.name)
+        }
+
+    }
+    
+    
+    
+    
+  
 }
 
 

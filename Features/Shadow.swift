@@ -11,10 +11,11 @@ class AvatarImage: UIImageView {
     @IBInspectable var borderColor: UIColor = .lightGray
     @IBInspectable var borderWidth: CGFloat = 0.5
     @IBInspectable var avatarBackgroundColor: UIColor = .systemBackground
+    @IBInspectable var cornerRadius: CGFloat = 45.0
     
     override func awakeFromNib() {
         self.backgroundColor = avatarBackgroundColor
-        self.layer.cornerRadius = 45
+        self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
@@ -25,8 +26,8 @@ class AvatarImage: UIImageView {
 class AvatarShadow: UIView {
     @IBInspectable var shadowColor: UIColor = .lightGray
     @IBInspectable var shadowOffset: CGSize = CGSize(width: 0.0, height: -3)
-    @IBInspectable var shadowOpacity: Float = 1
-    @IBInspectable var shadowRadius: CGFloat = 4
+    @IBInspectable var shadowOpacity: Float = 1.0
+    @IBInspectable var shadowRadius: CGFloat = 4.0
     
     override func awakeFromNib() {
         self.backgroundColor = .clear

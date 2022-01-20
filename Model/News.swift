@@ -13,5 +13,6 @@ import UIKit
 struct News {
     var name: String
     var profileImage: UIImage?
+    var newsText: String
+    var newsImage: UIImage?
 }
-

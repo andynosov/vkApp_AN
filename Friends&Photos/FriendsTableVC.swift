@@ -80,7 +80,7 @@ final class FriendsTableVC: UITableViewController {
     func createFirstLettersList(){
         nameDict.values.forEach{ x in
             listOfFirstLetters.append(String(x.prefix(1)))
-                             }
+        }
         let newSet = Set(listOfFirstLetters).sorted()
             listOfFirstLetters = Array(newSet)
     }

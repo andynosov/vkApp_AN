@@ -24,6 +24,7 @@ class LikeFeature: UIControl {
     var liked = false
     let likeImage = UIImageView(image: UIImage(systemName: "heart"))
     let likeCount = UILabel(frame: CGRect(x: 25, y: 0, width: 40, height: 20))
+    @IBInspectable var backgroundColorInspectable: UIColor = .clear
     
     
     private func configView() {
@@ -31,7 +32,7 @@ class LikeFeature: UIControl {
         self.addSubview(likeImage)
         self.addSubview(likeCount)
         self.tintColor = UIColor.lightGray
-        self.backgroundColor = .clear
+        self.backgroundColor = backgroundColorInspectable
         likeCount.text = String(countLikes)
         
     }

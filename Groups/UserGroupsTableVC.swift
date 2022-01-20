@@ -7,10 +7,11 @@
 
 import UIKit
 
-class UserGroupsTableVC: UITableViewController {
+class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
     
-    var groups: [Group] = []
+
     
+    @IBOutlet weak var searchBarUserGroups: UISearchBar!
     @IBAction func toGlobalGroups(segue: UIStoryboardSegue){
             guard
                 segue.identifier == "addGroup",
@@ -24,22 +25,27 @@ class UserGroupsTableVC: UITableViewController {
             tableView.reloadData()
             print("one")
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBarUserGroups.delegate = self
+        makeGroupList()
         tableView.register(UINib(
             nibName: "GroupCell",
             bundle: nil),
                            forCellReuseIdentifier: "groupCell")
     }
     
+    var groups: [Group] = []
+    var groupsNameList: [String] = []
+
     
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }
+    
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,12 +64,14 @@ class UserGroupsTableVC: UITableViewController {
         cell.configure(
             image: UIImage(named: avatarOfGroup) ?? UIImage(),
             name: nameOfGroup)
-        
-//        cell.groupName.text = groups[indexPath.row].name
-//        cell.groupImage.image = UIImage(named: groups[indexPath.row].profileImage)
+
         
         return cell
     }
+    
+    
+    
+    
     
   override func tableView(_ tableView: UITableView,didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(
@@ -85,6 +93,17 @@ class UserGroupsTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
+
+    func makeGroupList() {
+        groupsNameList.removeAll()
+        groups.forEach { x in
+            groupsNameList.append(x.name)
+        }
+    
+    }
+    
+    
+    
 
     
 }
