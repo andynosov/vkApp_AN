@@ -10,20 +10,23 @@ import UIKit
 class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
     
 
-    
     @IBOutlet weak var searchBarUserGroups: UISearchBar!
     @IBAction func toGlobalGroups(segue: UIStoryboardSegue){
             guard
                 segue.identifier == "addGroup",
                 let globalGroupsVC = segue.source as? GlobalGroupsTableVC,
                 let groupIndexPath = globalGroupsVC.tableView.indexPathForSelectedRow,
-                !self.groups.contains(globalGroupsVC.groups[groupIndexPath.row])
+                !groups.contains(globalGroupsVC.groups[groupIndexPath.row]),
+                !groupsNameList.contains(globalGroupsVC.groupsNameListNew[groupIndexPath.row])
             else {
                 return
             }
-            self.groups.append(globalGroupsVC.groups[groupIndexPath.row])
-            tableView.reloadData()
-            print("one")
+        globalGroupsVC.groups.forEach{ x in
+            if x.name == globalGroupsVC.groupsNameListNew[groupIndexPath.row]  {
+                groups.append(x)
+                makeGroupList()
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -33,42 +36,56 @@ class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
         tableView.register(UINib(
             nibName: "GroupCell",
             bundle: nil),
-                           forCellReuseIdentifier: "groupCell")
+            forCellReuseIdentifier: "groupCell")
     }
     
     var groups: [Group] = []
     var groupsNameList: [String] = []
-
-    
+    var groupsNameListNew: [String] = []
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        groupsNameListNew.count
+
     }
-    
-    
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "groupCell",
-                for: indexPath) as? GroupCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
         else {
             return UITableViewCell()
-            
         }
-        let theGroup = groups[indexPath.row]
-        let avatarOfGroup = theGroup.profileImage
-        let nameOfGroup = theGroup.name
         
-        cell.configure(
-            image: UIImage(named: avatarOfGroup) ?? UIImage(),
-            name: nameOfGroup)
-
+        cell.groupName.text = generateNameForCell(indexPath)
+        cell.groupImage.image = generateProfileImageForCell(indexPath)
         
         return cell
+    
     }
     
+    func makeGroupList() {
+        groupsNameList.removeAll()
+        groups.forEach { x in
+            groupsNameList.append(x.name)
+        }
+        groupsNameListNew = groupsNameList
+        tableView.reloadData()
+    }
+    
+    
+    func generateNameForCell(_ indexPath: IndexPath) -> String {
+        return groupsNameListNew[indexPath.row]
+    }
+    
+    func generateProfileImageForCell(_ indexPath: IndexPath) -> UIImage? {
+        for x in groups {
+            let namesRows = generateNameForCell(indexPath)
+            if x.name.contains(namesRows) {
+                return UIImage(named: x.profileImage)
+            }
+        }
+        return nil
+    }
     
     
     
@@ -84,27 +101,34 @@ class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
                             commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            groups.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            groups.forEach{ x in
+                if x.name == groupsNameListNew[indexPath.row] {
+                    groups.remove(at: indexPath.row)
+                }
+            }
         }
+        makeGroupList()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
     }
 
-    func makeGroupList() {
-        groupsNameList.removeAll()
-        groups.forEach { x in
-            groupsNameList.append(x.name)
-        }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+        
+        groupsNameListNew = searchText.isEmpty ? groupsNameList : groupsNameList.filter {
+            (item: String) -> Bool in
+            return item.range(of: searchText,
+                              options: .caseInsensitive,
+                              range: nil,
+                              locale: nil) != nil
+        }
+       
+        tableView.reloadData()
     }
     
-    
-    
-
     
 }
 
