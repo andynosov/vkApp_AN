@@ -10,7 +10,7 @@ import UIKit
 final class GroupCell: UITableViewCell {
 
 
-    @IBOutlet var groupImage: AvatarImage!
+    @IBOutlet var groupImage: ProfileImage!
     @IBOutlet var groupName: UILabel!
     
 

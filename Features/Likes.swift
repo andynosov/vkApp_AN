@@ -32,6 +32,8 @@ class LikeFeature: UIControl {
         self.addSubview(likeImage)
         self.addSubview(likeCount)
         self.tintColor = UIColor.lightGray
+        self.tintColor = UIColor.lightGray
+        likeCount.textColor = UIColor.lightGray
         self.backgroundColor = backgroundColorInspectable
         likeCount.text = String(countLikes)
         
@@ -40,6 +42,15 @@ class LikeFeature: UIControl {
     
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        
+        let original = self.likeImage.transform
+        UIView.animate(withDuration: 0.2, delay: 0, options: [ .autoreverse], animations: {
+ 
+            self.likeImage.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }, completion: { _ in
+            self.likeImage.transform = original
+
+        })
         
         if liked {
             liked = false

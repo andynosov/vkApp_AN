@@ -9,7 +9,7 @@ import UIKit
 
 class NewsCell: UITableViewCell {
     
-    @IBOutlet var profileImage: AvatarImage!
+    @IBOutlet var profileImage: ProfileImage!
     @IBOutlet var profileNewsName: UILabel!
     @IBOutlet var newsImage: UIImageView!
     @IBOutlet var newsText: UILabel!

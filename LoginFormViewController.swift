@@ -26,7 +26,6 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
         ScrollViewLoginPage?.addGestureRecognizer(hideKeyboard)
         loginButton.backgroundColor = .systemGray6
         loginButton.layer.cornerRadius = 5
-        // * делегаты для переноса фокуса на следующее поле ввода
         self.emailField.delegate = self
         self.passwordField.delegate = self
    
@@ -118,14 +117,11 @@ class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
     
     func showLoginError() {
-        // Создаем контроллер
-        let alter = UIAlertController(title: "Error", message: "Incorrect password or/and email", preferredStyle: .alert)
-        // Создаем кнопку для UIAlertController
+        let alert = UIAlertController(title: "Error", message: "Incorrect password or/and email", preferredStyle: .alert)
+
         let action = UIAlertAction(title: "ok", style: .cancel, handler: nil)
-        // Добавляем кнопку на UIAlertController
-        alter.addAction(action)
-        // Показываем UIAlertController
-        present(alter, animated: true, completion: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
     

@@ -56,8 +56,12 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yf-ZI-CMr" customClass="LoadingAnimation" customModule="vkApp_AndreiNosov" customModuleProvider="target">
-                                        <rect key="frame" x="93.666666666666671" y="677.33333333333337" width="187.66666666666663" height="36.666666666666629"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="87.666666666666686" y="788" width="200" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9Iw-Bt-roF"/>
+                                            <constraint firstAttribute="width" constant="200" id="nIB-ao-jwI"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="1aB-VZ-bVx"/>
@@ -67,11 +71,9 @@
                                     <constraint firstItem="1aB-VZ-bVx" firstAttribute="bottom" secondItem="1yf-ZI-CMr" secondAttribute="bottom" constant="20" id="45f-xj-Y5D"/>
                                     <constraint firstItem="2AH-NM-nJd" firstAttribute="centerY" secondItem="BZm-Ft-w5h" secondAttribute="centerY" id="6Da-uK-Egh"/>
                                     <constraint firstItem="1yf-ZI-CMr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="70F-dC-FEv" secondAttribute="bottom" constant="20" id="CYh-PM-XEU"/>
-                                    <constraint firstItem="1yf-ZI-CMr" firstAttribute="height" secondItem="BZm-Ft-w5h" secondAttribute="height" multiplier="0.05" id="IlY-TD-6k9"/>
                                     <constraint firstItem="2AH-NM-nJd" firstAttribute="top" secondItem="BZm-Ft-w5h" secondAttribute="top" priority="750" constant="591" id="OUy-u4-DMi"/>
                                     <constraint firstItem="1yf-ZI-CMr" firstAttribute="centerX" secondItem="1aB-VZ-bVx" secondAttribute="centerX" id="k1m-aw-mmN"/>
                                     <constraint firstItem="2AH-NM-nJd" firstAttribute="centerX" secondItem="BZm-Ft-w5h" secondAttribute="centerX" id="uO8-fT-q3g"/>
-                                    <constraint firstItem="1yf-ZI-CMr" firstAttribute="width" secondItem="BZm-Ft-w5h" secondAttribute="width" multiplier="0.5" id="wfE-Wo-0vI"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Qmf-ds-2MU"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="dzC-B6-i26"/>

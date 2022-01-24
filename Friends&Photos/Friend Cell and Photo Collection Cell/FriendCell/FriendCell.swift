@@ -10,7 +10,7 @@ import UIKit
 class FriendCell: UITableViewCell {
 
     
-    @IBOutlet var friendImage: UIImageView!
+    @IBOutlet var friendImage: ProfileImage!
     @IBOutlet var friendName: UILabel!
     
 

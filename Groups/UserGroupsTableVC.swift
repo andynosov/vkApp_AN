@@ -117,7 +117,6 @@ class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        
         groupsNameListNew = searchText.isEmpty ? groupsNameList : groupsNameList.filter {
             (item: String) -> Bool in
             return item.range(of: searchText,
