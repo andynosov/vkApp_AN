@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" id="KGk-i7-Jjw" customClass="NewsCell" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="640"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07a-1K-wnx">
+                        <rect key="frame" x="107" y="40.5" width="193" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zombie" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mPs-8s-ngf">
+                        <rect key="frame" x="0.0" y="102" width="320" height="320"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="mPs-8s-ngf" secondAttribute="height" id="Ftf-cG-aic"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ire-dP-r83">
+                        <rect key="frame" x="5" y="432" width="310" height="148"/>
+                        <attributedString key="attributedText">
+                            <fragment>
+                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda</string>
+                                <attributes>
+                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="NSFont" metaFont="system" size="14"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacingBefore="2" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0t-4O-q0h" userLabel="Controls -like -comment viewed count">
+                        <rect key="frame" x="5" y="590" width="310" height="30"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLw-uV-bzA" customClass="LikeFeature" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+                                <rect key="frame" x="10" y="0.0" width="60" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QYf-Z2-3sO"/>
+                                    <constraint firstAttribute="width" constant="60" id="SHv-7M-9ru"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ora-ru-v03" customClass="Comment" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+                                <rect key="frame" x="80" y="0.0" width="60" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1u-sr-vk3" customClass="Repost" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+                                <rect key="frame" x="150" y="0.0" width="63" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNB-ry-i3f" customClass="Viewed" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+                                <rect key="frame" x="240" y="0.0" width="60" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iNB-ry-i3f" secondAttribute="trailing" constant="10" id="5vi-Wn-aKW"/>
+                            <constraint firstItem="Ora-ru-v03" firstAttribute="leading" secondItem="yLw-uV-bzA" secondAttribute="trailing" constant="10" id="B00-vW-33H"/>
+                            <constraint firstItem="m1u-sr-vk3" firstAttribute="centerY" secondItem="yLw-uV-bzA" secondAttribute="centerY" id="BpH-7v-T0U"/>
+                            <constraint firstItem="yLw-uV-bzA" firstAttribute="centerY" secondItem="p0t-4O-q0h" secondAttribute="centerY" id="DLg-Q5-nmY"/>
+                            <constraint firstAttribute="height" constant="30" id="F7d-S4-NH1"/>
+                            <constraint firstItem="yLw-uV-bzA" firstAttribute="leading" secondItem="p0t-4O-q0h" secondAttribute="leading" constant="10" id="Nrl-6O-GnF"/>
+                            <constraint firstItem="Ora-ru-v03" firstAttribute="height" secondItem="yLw-uV-bzA" secondAttribute="height" id="TU5-PD-Pe5"/>
+                            <constraint firstItem="Ora-ru-v03" firstAttribute="width" secondItem="yLw-uV-bzA" secondAttribute="width" id="aMd-bn-hq4"/>
+                            <constraint firstItem="iNB-ry-i3f" firstAttribute="centerY" secondItem="yLw-uV-bzA" secondAttribute="centerY" id="evJ-sU-7UT"/>
+                            <constraint firstItem="m1u-sr-vk3" firstAttribute="width" secondItem="yLw-uV-bzA" secondAttribute="width" multiplier="1.05" id="i3e-ZX-8db"/>
+                            <constraint firstItem="m1u-sr-vk3" firstAttribute="height" secondItem="yLw-uV-bzA" secondAttribute="height" id="kIZ-sb-ppQ"/>
+                            <constraint firstItem="iNB-ry-i3f" firstAttribute="height" secondItem="yLw-uV-bzA" secondAttribute="height" id="lkF-AH-WyL"/>
+                            <constraint firstItem="Ora-ru-v03" firstAttribute="centerY" secondItem="yLw-uV-bzA" secondAttribute="centerY" id="sni-5v-8J4"/>
+                            <constraint firstItem="m1u-sr-vk3" firstAttribute="leading" secondItem="Ora-ru-v03" secondAttribute="trailing" constant="10" id="uUa-Hc-OM7"/>
+                            <constraint firstItem="iNB-ry-i3f" firstAttribute="width" secondItem="yLw-uV-bzA" secondAttribute="width" id="uwy-EF-J8d"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPO-45-bpL" customClass="ProfileShadow" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+                        <rect key="frame" x="5" y="10" width="82" height="82"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barak" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-v8-zm7" customClass="ProfileImage" customModule="vkApp_AndreiNosov" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pyW-v8-zm7" secondAttribute="height" id="fxw-oR-jKN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pyW-v8-zm7" firstAttribute="centerY" secondItem="sPO-45-bpL" secondAttribute="centerY" id="0Zw-5L-zxd"/>
+                            <constraint firstItem="pyW-v8-zm7" firstAttribute="leading" secondItem="sPO-45-bpL" secondAttribute="leading" id="mdN-j0-lgX"/>
+                            <constraint firstAttribute="width" secondItem="sPO-45-bpL" secondAttribute="height" id="sYH-wv-GiF"/>
+                            <constraint firstItem="pyW-v8-zm7" firstAttribute="width" secondItem="sPO-45-bpL" secondAttribute="width" id="zdM-rN-Z5p"/>
+                            <constraint firstAttribute="width" constant="82" id="zlN-3A-PQc"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ire-dP-r83" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="0TQ-ad-oCp"/>
+                    <constraint firstItem="sPO-45-bpL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="14d-ka-SZR"/>
+                    <constraint firstItem="mPs-8s-ngf" firstAttribute="top" secondItem="sPO-45-bpL" secondAttribute="bottom" constant="10" id="2rD-M7-QjV"/>
+                    <constraint firstItem="07a-1K-wnx" firstAttribute="centerY" secondItem="sPO-45-bpL" secondAttribute="centerY" id="54i-uS-Qxs"/>
+                    <constraint firstItem="sPO-45-bpL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6uS-c5-9jT"/>
+                    <constraint firstItem="Ire-dP-r83" firstAttribute="top" secondItem="mPs-8s-ngf" secondAttribute="bottom" constant="10" id="OT5-DZ-mZm"/>
+                    <constraint firstAttribute="bottom" secondItem="p0t-4O-q0h" secondAttribute="bottom" constant="20" id="VOS-cE-MXs"/>
+                    <constraint firstItem="07a-1K-wnx" firstAttribute="leading" secondItem="sPO-45-bpL" secondAttribute="trailing" constant="20" id="aED-jp-iLw"/>
+                    <constraint firstAttribute="trailing" secondItem="mPs-8s-ngf" secondAttribute="trailing" id="aNr-z0-g3Q"/>
+                    <constraint firstItem="p0t-4O-q0h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ire-dP-r83" secondAttribute="bottom" constant="10" id="e6X-GR-Msq"/>
+                    <constraint firstItem="mPs-8s-ngf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fzM-FN-FFv"/>
+                    <constraint firstAttribute="trailing" secondItem="Ire-dP-r83" secondAttribute="trailing" constant="5" id="o3u-Zf-H6A"/>
+                    <constraint firstAttribute="trailing" secondItem="p0t-4O-q0h" secondAttribute="trailing" constant="5" id="qgC-RW-ZRA"/>
+                    <constraint firstItem="p0t-4O-q0h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="vsn-YP-xAD"/>
+                    <constraint firstAttribute="trailing" secondItem="07a-1K-wnx" secondAttribute="trailing" priority="999" constant="20" id="w5W-KF-ezB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsImage" destination="mPs-8s-ngf" id="b1l-yj-Z4r"/>
+                <outlet property="newsText" destination="Ire-dP-r83" id="HvM-lU-J8W"/>
+                <outlet property="profileImage" destination="pyW-v8-zm7" id="FIq-SP-Hi1"/>
+                <outlet property="profileNewsName" destination="07a-1K-wnx" id="K4K-yF-G9V"/>
+            </connections>
+            <point key="canvasLocation" x="208.69565217391306" y="21.428571428571427"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="barak" width="442" height="640"/>
+        <image name="zombie" width="672" height="712"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
