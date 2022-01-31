@@ -1,5 +1,5 @@
 //
-//  LikeCommentPostViewed.swift
+//  CommentPostViewed.swift
 //  vkApp_AndreiNosov
 //
 //  Created by Andrei Nosov on 20.01.2022.

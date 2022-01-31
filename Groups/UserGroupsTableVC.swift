@@ -9,7 +9,6 @@ import UIKit
 
 class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
     
-
     @IBOutlet weak var searchBarUserGroups: UISearchBar!
     @IBAction func toGlobalGroups(segue: UIStoryboardSegue){
             guard
@@ -33,6 +32,7 @@ class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         searchBarUserGroups.delegate = self
         makeGroupList()
+        //searchBarUserGroups.
         tableView.register(UINib(
             nibName: "GroupCell",
             bundle: nil),
@@ -44,10 +44,14 @@ class UserGroupsTableVC: UITableViewController, UISearchBarDelegate {
     var groupsNameListNew: [String] = []
     
     
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         groupsNameListNew.count
 
     }
+    
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard

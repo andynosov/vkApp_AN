@@ -15,9 +15,7 @@ final class GroupCell: UITableViewCell {
     
 
     
-    func configure(
-        image: UIImage, //UIImage,
-        name: String) {
+    func configure(image: UIImage, name: String) {
             groupImage.image = image
             groupName.text = name
         }

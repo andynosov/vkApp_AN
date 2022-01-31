@@ -41,4 +41,25 @@ final class PhotoCollectionVC: UICollectionViewController {
         return cell
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        defer { collectionView.deselectItem(
+            at: indexPath,
+            animated: true) }
+        performSegue(
+            withIdentifier: "segueToLargePhoto",
+            sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToLargePhoto" {
+            guard let largePhoto = segue.destination as? PhotoLargeVC else { return }
+            
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first{
+                largePhoto.stackOfLargePhotos = userPhotoCollection
+                largePhoto.selectedPhotoNumber = indexPath.row
+
+            }
+        }
+    }
+   
 }

@@ -117,9 +117,6 @@ class GlobalGroupsTableVC: UITableViewController, UISearchBarDelegate {
             
             return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
-        //для каждого имени в groups
-        //NameListNew, если такое имя есть, пропускаем
-        
 
         tableView.reloadData()
     }

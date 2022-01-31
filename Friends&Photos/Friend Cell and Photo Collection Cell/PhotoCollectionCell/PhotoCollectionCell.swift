@@ -14,4 +14,8 @@ class PhotoCollectionCell: UICollectionViewCell {
     func configure(image: UIImage) {
         friendLargePhoto.image = image
     }
+    
+    
+    
+    
 }
