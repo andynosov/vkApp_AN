@@ -10,6 +10,9 @@ import UIKit
 
 
 class LoginPageViewController: UIViewController, UITextFieldDelegate {
+    
+    let session = Session.instance
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: UIButton!

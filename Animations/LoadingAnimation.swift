@@ -21,9 +21,9 @@ class LoadingAnimation: UIView {
         startLoadingAnimationView()
     }
 
-let circle1: UIView = UIView(frame: CGRect(x: 50, y: 10, width: 20, height: 20))
-let circle2: UIView = UIView(frame: CGRect(x: 90, y: 10, width: 20, height: 20))
-let circle3: UIView = UIView(frame: CGRect(x: 130, y: 10, width: 20, height: 20))
+let circle1: UIView = UIView(frame: CGRect(x: 65, y: 10, width: 10, height: 10))
+let circle2: UIView = UIView(frame: CGRect(x: 85, y: 10, width: 10, height: 10))
+let circle3: UIView = UIView(frame: CGRect(x: 105, y: 10, width: 10, height: 10))
     
     
     
