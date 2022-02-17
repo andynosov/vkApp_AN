@@ -32,6 +32,8 @@
 		C1F7507F2776FB45000B2D81 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7507D2776FB45000B2D81 /* GroupCell.swift */; };
 		C1F750802776FB45000B2D81 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F7507E2776FB45000B2D81 /* GroupCell.xib */; };
 		C1FECC8827BA6059008F0D7D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FECC8727BA6059008F0D7D /* Session.swift */; };
+		C1FECC8A27BBA3DF008F0D7D /* VKLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FECC8927BBA3DF008F0D7D /* VKLoginVC.swift */; };
+		C1FECC8E27BD94FB008F0D7D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FECC8D27BD94FB008F0D7D /* NetworkService.swift */; };
 		C1FFB7332765EB1200B6EB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFB7322765EB1200B6EB50 /* AppDelegate.swift */; };
 		C1FFB7352765EB1200B6EB50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFB7342765EB1200B6EB50 /* SceneDelegate.swift */; };
 		C1FFB73A2765EB1200B6EB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FFB7382765EB1200B6EB50 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		C1F7507D2776FB45000B2D81 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		C1F7507E2776FB45000B2D81 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		C1FECC8727BA6059008F0D7D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C1FECC8927BBA3DF008F0D7D /* VKLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginVC.swift; sourceTree = "<group>"; };
+		C1FECC8D27BD94FB008F0D7D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C1FFB72F2765EB1200B6EB50 /* vkApp_AndreiNosov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkApp_AndreiNosov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FFB7322765EB1200B6EB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1FFB7342765EB1200B6EB50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,13 +194,30 @@
 			path = "Group Cells";
 			sourceTree = "<group>";
 		};
+		C1FECC8B27BBCC9B008F0D7D /* OldFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C103300B276AD65F00757585 /* LoginFormViewController.swift */,
+			);
+			path = OldFiles;
+			sourceTree = "<group>";
+		};
+		C1FECC8C27BD94BF008F0D7D /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				C1FECC8D27BD94FB008F0D7D /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		C1FFB7262765EB1200B6EB50 = {
 			isa = PBXGroup;
 			children = (
-				C1EBF075279A9E4F00909536 /* Animations */,
-				C103300B276AD65F00757585 /* LoginFormViewController.swift */,
+				C1FECC8C27BD94BF008F0D7D /* NetworkService */,
+				C1FECC8927BBA3DF008F0D7D /* VKLoginVC.swift */,
 				C1033014276AFEBF00757585 /* TabBarViewController.swift */,
 				C1FFB7382765EB1200B6EB50 /* Main.storyboard */,
+				C1EBF075279A9E4F00909536 /* Animations */,
 				C1B23A192796BE1800D1A2B1 /* News */,
 				C1E320CF277C45480007FC53 /* Features */,
 				C177C6322771842100A3A7CE /* Groups */,
@@ -223,6 +244,7 @@
 				C1FFB73B2765EB1800B6EB50 /* Assets.xcassets */,
 				C1FFB73D2765EB1800B6EB50 /* LaunchScreen.storyboard */,
 				C1FFB7402765EB1800B6EB50 /* Info.plist */,
+				C1FECC8B27BBCC9B008F0D7D /* OldFiles */,
 			);
 			path = vkApp_AndreiNosov;
 			sourceTree = "<group>";
@@ -307,6 +329,8 @@
 				C15A4EBD276E1490003A97D3 /* GlobalGroupsTableVC.swift in Sources */,
 				C1B23A182793163A00D1A2B1 /* News.swift in Sources */,
 				C1B23A2A279858F900D1A2B1 /* NewsCell.swift in Sources */,
+				C1FECC8E27BD94FB008F0D7D /* NetworkService.swift in Sources */,
+				C1FECC8A27BBA3DF008F0D7D /* VKLoginVC.swift in Sources */,
 				C1E320D1277C4FBB0007FC53 /* ProfileImage.swift in Sources */,
 				C18857A127A5C69200EDF7FC /* TransitionAnimationController.swift in Sources */,
 				C1033013276AFE0400757585 /* PhotoCollectionVC.swift in Sources */,

@@ -57,6 +57,7 @@ final class FriendsTableVC: UITableViewController {
         
         createFriendNamesList()
         createFirstLettersList()
+        fetchVK().loadData(.groups)
         
     }
     

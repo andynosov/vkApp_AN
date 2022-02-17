@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PUo-Bc-LFA">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -9,6 +9,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--LoginVC-->
+        <scene sceneID="ukE-TQ-YMa">
+            <objects>
+                <viewController id="PUo-Bc-LFA" customClass="VKLoginVC" customModule="vkApp_AndreiNosov" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7CF-Ck-TAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMx-Za-uKP">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zj5-72-1sb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tMx-Za-uKP" firstAttribute="top" secondItem="Zj5-72-1sb" secondAttribute="top" id="8cA-y4-q5V"/>
+                            <constraint firstItem="Zj5-72-1sb" firstAttribute="trailing" secondItem="tMx-Za-uKP" secondAttribute="trailing" id="abe-hr-R1m"/>
+                            <constraint firstItem="tMx-Za-uKP" firstAttribute="leading" secondItem="Zj5-72-1sb" secondAttribute="leading" id="alO-JG-2vX"/>
+                            <constraint firstItem="Zj5-72-1sb" firstAttribute="bottom" secondItem="tMx-Za-uKP" secondAttribute="bottom" id="uRZ-bZ-SLd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="tMx-Za-uKP" id="ibN-CP-ITb"/>
+                        <segue destination="jgr-yh-9t9" kind="show" identifier="succesfullLogIn" id="Cg9-fs-gsz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2jn-6d-njF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="197"/>
+        </scene>
         <!--Login Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -42,7 +77,6 @@
                                                 <buttonConfiguration key="configuration" style="tinted" title="Log In"/>
                                                 <connections>
                                                     <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fWN-fq-UQx"/>
-                                                    <segue destination="jgr-yh-9t9" kind="show" id="rQY-eM-Isv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -108,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732" y="196.55172413793105"/>
+            <point key="canvasLocation" x="-276" y="855"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="Aju-IP-LDV">
@@ -234,6 +268,11 @@
                         </searchBar>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Communities" largeTitleDisplayMode="always" id="E0n-Rn-Z8f">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="7Ol-Xn-U9H">
+                            <connections>
+                                <segue destination="wzO-7H-pvl" kind="unwind" unwindAction="unlogin:" id="Uef-ZA-jhK"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Global Groups" image="plus" catalog="system" style="plain" id="6kB-Sc-4m7">
                             <connections>
                                 <action selector="toGlobalGroupsWithSegue:" destination="48l-VS-2zr" id="1rA-cD-lsY"/>
@@ -247,6 +286,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCJ-LX-5Eb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wzO-7H-pvl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2500" y="722"/>
         </scene>
