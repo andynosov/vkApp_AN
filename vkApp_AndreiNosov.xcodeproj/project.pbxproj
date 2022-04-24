@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C103300C276AD65F00757585 /* LoginFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C103300B276AD65F00757585 /* LoginFormViewController.swift */; };
+		C103300C276AD65F00757585 /* VKLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C103300B276AD65F00757585 /* VKLoginVC.swift */; };
 		C1033011276AF82400757585 /* FriendsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1033010276AF82400757585 /* FriendsTableVC.swift */; };
 		C1033013276AFE0400757585 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1033012276AFE0400757585 /* PhotoCollectionVC.swift */; };
 		C1033015276AFEBF00757585 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1033014276AFEBF00757585 /* TabBarViewController.swift */; };
@@ -31,6 +31,7 @@
 		C1EBF079279FC35200909536 /* PhotoLargeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EBF078279FC35100909536 /* PhotoLargeVC.swift */; };
 		C1F7507F2776FB45000B2D81 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F7507D2776FB45000B2D81 /* GroupCell.swift */; };
 		C1F750802776FB45000B2D81 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F7507E2776FB45000B2D81 /* GroupCell.xib */; };
+		C1FD0D21281552DE0040CD16 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD0D20281552DE0040CD16 /* Session.swift */; };
 		C1FFB7332765EB1200B6EB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFB7322765EB1200B6EB50 /* AppDelegate.swift */; };
 		C1FFB7352765EB1200B6EB50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFB7342765EB1200B6EB50 /* SceneDelegate.swift */; };
 		C1FFB73A2765EB1200B6EB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FFB7382765EB1200B6EB50 /* Main.storyboard */; };
@@ -39,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C103300B276AD65F00757585 /* LoginFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormViewController.swift; sourceTree = "<group>"; };
+		C103300B276AD65F00757585 /* VKLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginVC.swift; sourceTree = "<group>"; };
 		C1033010276AF82400757585 /* FriendsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableVC.swift; sourceTree = "<group>"; };
 		C1033012276AFE0400757585 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
 		C1033014276AFEBF00757585 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		C1EBF078279FC35100909536 /* PhotoLargeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLargeVC.swift; sourceTree = "<group>"; };
 		C1F7507D2776FB45000B2D81 /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		C1F7507E2776FB45000B2D81 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
+		C1FD0D20281552DE0040CD16 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		C1FFB72F2765EB1200B6EB50 /* vkApp_AndreiNosov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkApp_AndreiNosov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FFB7322765EB1200B6EB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1FFB7342765EB1200B6EB50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,12 +192,11 @@
 		C1FFB7262765EB1200B6EB50 = {
 			isa = PBXGroup;
 			children = (
-				C1EBF075279A9E4F00909536 /* Animations */,
-				C103300B276AD65F00757585 /* LoginFormViewController.swift */,
+				C1FD0D20281552DE0040CD16 /* Session.swift */,
+				C103300B276AD65F00757585 /* VKLoginVC.swift */,
 				C1033014276AFEBF00757585 /* TabBarViewController.swift */,
 				C1FFB7382765EB1200B6EB50 /* Main.storyboard */,
 				C1B23A192796BE1800D1A2B1 /* News */,
-				C1E320CF277C45480007FC53 /* Features */,
 				C177C6322771842100A3A7CE /* Groups */,
 				C17BE2F0276F1F6F00DAE1F1 /* Model */,
 				C17BE2EF276F15A000DAE1F1 /* Friends&Photos */,
@@ -215,6 +216,8 @@
 		C1FFB7312765EB1200B6EB50 /* vkApp_AndreiNosov */ = {
 			isa = PBXGroup;
 			children = (
+				C1E320CF277C45480007FC53 /* Features */,
+				C1EBF075279A9E4F00909536 /* Animations */,
 				C1FFB7322765EB1200B6EB50 /* AppDelegate.swift */,
 				C1FFB7342765EB1200B6EB50 /* SceneDelegate.swift */,
 				C1FFB73B2765EB1800B6EB50 /* Assets.xcassets */,
@@ -309,7 +312,7 @@
 				C1033013276AFE0400757585 /* PhotoCollectionVC.swift in Sources */,
 				C174B979277C6EC700665E05 /* Likes.swift in Sources */,
 				C17BE2F4276F201100DAE1F1 /* Group.swift in Sources */,
-				C103300C276AD65F00757585 /* LoginFormViewController.swift in Sources */,
+				C103300C276AD65F00757585 /* VKLoginVC.swift in Sources */,
 				C1FFB7332765EB1200B6EB50 /* AppDelegate.swift in Sources */,
 				C1EBF079279FC35200909536 /* PhotoLargeVC.swift in Sources */,
 				C12115FE2778B4600059533D /* PhotoCollectionCell.swift in Sources */,
@@ -318,6 +321,7 @@
 				C17BE2F2276F1F8C00DAE1F1 /* User.swift in Sources */,
 				C1EBF077279A9E8000909536 /* LoadingAnimation.swift in Sources */,
 				C1033015276AFEBF00757585 /* TabBarViewController.swift in Sources */,
+				C1FD0D21281552DE0040CD16 /* Session.swift in Sources */,
 				C1B23A1B2796BE4D00D1A2B1 /* NewsTableVC.swift in Sources */,
 				C1033017276AFFB500757585 /* UserGroupsTableVC.swift in Sources */,
 				C1FFB7352765EB1200B6EB50 /* SceneDelegate.swift in Sources */,
